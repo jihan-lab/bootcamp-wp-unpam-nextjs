@@ -1,9 +1,15 @@
 import Head from "next/head";
+import React from "react";
 import Image from "next/image";
 import Fade from "react-reveal/Zoom";
+import Jump from "react-reveal/Zoom";
 
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
+import Navbar from "../components/Navbar";
+import Card from "../components/Card";
+import Skills from "../components/Skills";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const name = "Jihan Abdul";
@@ -14,57 +20,11 @@ export default function Home() {
           <title>{siteTitle}</title>
         </Head>
         <div className="parallax">
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div className="container">
-              <a className="navbar-brand" href="#"></a>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <ul className="navbar-nav mx-auto text-uppercase">
-                  <li className="nav-item active">
-                    <a className="nav-link" href="#">
-                      Home
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#about">
-                      About
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#education">
-                      Education
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#experience">
-                      Experience
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#skills">
-                      Skills
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          <Fade top>
+            <Navbar />
+          </Fade>
         </div>
-        <div className="d-flex py-4 flex-row justify-content-center align-items-center">
+        <div className="d-flex py-4 flex-row bg-light justify-content-center align-items-center">
           <div className="products-thumbnail">
             <div className="products-image">
               <Image
@@ -83,186 +43,45 @@ export default function Home() {
             games, programming and watch movie!
           </h5>
         </div>
-        <Fade>
-          <div id="about">
-            <br></br>
-            <div
-              className="card mt-5 bg-light shadow-lg"
-              style={{ width: 1000 }}
-            >
-              <div className="card-body">
-                <h5 className="card-title">About</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  FullStack Web Programming
-                </h6>
-                <p className="card-text">
-                  I am a highly motivated Person with internship and training
-                  experience. In the previous role as a fullstack web developer.
-                  Passionate about building models that fix problems on a
-                  website, relevant skills including frontend and backend like
-                  html, javascript css, bootstrap, react js, node js, php,
-                  laravel. Have excellent interpersonal skills, agile, eager to
-                  learn and interested in learning new technologies including
-                  website and application development.
-                </p>
-                <a href="#" className="card-link">
-                  Card link
-                </a>
-                <a href="#" className="card-link">
-                  Another link
-                </a>
-              </div>
-            </div>
-          </div>
+        <Fade delay={1000}>
+          <Card
+            id="about"
+            title="About"
+            subTitle="Full Stack Web Programming"
+            desc="I am a highly motivated Person with internship and training experience. In the previous role as a fullstack web developer. Passionate about building models that fix problems on a website, relevant skills including frontend and backend like html, javascript css, bootstrap, react js, node js, php, laravel. Have excellent interpersonal skills, agile, eager to learn and interested in learning new technologies including website and application development."
+            link1="About me"
+            link2="Contact me"
+          />
         </Fade>
         <Fade>
           <div className="d-flex justify-content-end mb-5" id="education">
-            <br></br>
-            <div
-              className="card mt-5 bg-light shadow-lg"
-              style={{ width: 1000 }}
-            >
-              <div className="card-body">
-                <h5 className="card-title">Education</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  Information Engineering
-                </h6>
-                <p className="card-text">
-                  University Pamulang (2018-Present) - Information technology
-                  Graduated : present (estimated graduation : 2022) Dibimbing.Id
-                  (2021/2022) – FullStack Web Developer Graduated : Batch 2
-                  2021/2022 (February 2022) BLKI Banten (2018) – AutoCAD Civil
-                  Graduated : Nov 2018
-                </p>
-                <a href="#" className="card-link">
-                  Card link
-                </a>
-                <a href="#" className="card-link">
-                  Another link
-                </a>
-              </div>
-            </div>
+            <Card
+              id="education"
+              title="Education"
+              subTitle="Information Engineering"
+              desc="University Pamulang (2018-Present) - Information technology Graduated : present (estimated graduation : 2022) Dibimbing.Id (2021/2022) – FullStack Web Developer Graduated : Batch 2 2021/2022 (February 2022) BLKI Banten (2018) – AutoCAD Civil Graduated : Nov 2018."
+              link1="My License"
+              link2="Photo"
+            />
           </div>
         </Fade>
         <div id="skills" style={{ backgroundColor: "#ddd" }} className="pb-5">
           <br></br>
           <div className="container">
-            <h1 className="mt-5">Skills</h1>
-            <div className="row align-items-center">
-              <div className="col-2">
-                <h3>HTML</h3>
+            <h1 className="mt-5 mb-5">Skills</h1>
+            <Jump>
+              <div className="d-flex flex-row justify-content-between">
+                <Skills img="/images/html.png" />
+                <Skills img="/images/css.png" />
+                <Skills img="/images/js.png" />
+                <Skills img="/images/bootstrap.png" />
+                <Skills img="/images/nodeJS.png" />
+                <Skills img="/images/react.png" />
               </div>
-              <div className="col-10">
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: "95%" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              <div className="col-2">
-                <h3>CSS</h3>
-              </div>
-              <div className="col-10">
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: "95%" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              <div className="col-2">
-                <h3>JavaScript</h3>
-              </div>
-              <div className="col-10">
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: "95%" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              <div className="col-2">
-                <h3>BootStrap</h3>
-              </div>
-              <div className="col-10">
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: "95%" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              <div className="col-2">
-                <h3>React JS</h3>
-              </div>
-              <div className="col-10">
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: "95%" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              <div className="col-2">
-                <h3>Node JS</h3>
-              </div>
-              <div className="col-10">
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style={{ width: "95%" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
+            </Jump>
           </div>
         </div>
-        <Link href="/posts/first-post">Lets go to the first post page </Link>
-
-        <footer
-          style={{ height: 400, backgroundColor: "#000000", marginTop: 50 }}
-        ></footer>
+        <Footer />
       </Layout>
     </>
   );
